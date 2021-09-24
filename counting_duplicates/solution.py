@@ -15,16 +15,13 @@ Example
 
 def duplicate_count(text):
     lower = text.lower()
-    print('lower string is: ', lower)
     arr = [None] * 26
     for c in lower:
         index = ord(c) - 97
-        print(index)
         if arr[index] is None:
             arr[index] = 0
         else:
             arr[index] = 1
-        print('index', index, 'added')
     s = 0
     for num in arr:
         if num is not None:
