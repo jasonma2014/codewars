@@ -14,11 +14,19 @@ For example:
 import operator
 from functools import reduce
 
+import codewars_test as test
+
 
 def persistence(n):
     count = 0
     while n >= 10:
-        n = reduce(operator.mul,[int(x) for x in str(n)], 1)
+        n = reduce(operator.mul, [int(x) for x in str(n)], 1)
         count += 1
     return count
 
+
+test.it("Basic tests")
+test.assert_equals(persistence(39), 3)
+test.assert_equals(persistence(4), 0)
+test.assert_equals(persistence(25), 2)
+test.assert_equals(persistence(999), 4)
